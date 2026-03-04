@@ -1677,6 +1677,56 @@
             animation: ring-fill 1.5s ease-out forwards;
         }
 
+        /* ========== V20: MOBILE RESPONSIVENESS FIXES ========== */
+        /* TIER 1 — Critical */
+        @media (max-width: 768px) {
+            /* Testimonials: 3-col → 1-col */
+            .testimonials-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+                max-width: 480px !important;
+            }
+            /* Pricing comparison table: scroll wrapper */
+            .comparison-table {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.75rem 0.625rem;
+                font-size: 0.8125rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* TIER 1 — How It Works step numbers */
+            .how-step-number { font-size: 2.5rem; }
+
+            /* TIER 2 — Trust Strip: ensure readable 2x2 */
+            .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+
+            /* TIER 2 — System Comparison: stack label/value vertically */
+            .system-card-row { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
+            .system-card-row-value { text-align: left; font-size: 0.875rem; }
+            .system-card-row-label { font-size: 0.6875rem; }
+
+            /* TIER 2 — Feature tabs */
+            .feature-tab { padding: 0.5rem 0.75rem; font-size: 0.8125rem; }
+
+            /* TIER 2 — Pricing price font */
+            .pricing-card-header .price { font-size: 2.75rem; }
+
+            /* TIER 3 — Hero description */
+            .hero-description { font-size: 1rem; }
+
+            /* TIER 3 — Final CTA */
+            .final-cta { padding: 5rem 0; }
+            .final-cta p { font-size: 1rem; }
+
+            /* TIER 3 — The Secret text */
+            .secret-text { font-size: 0.9375rem; }
+        }
+
     </style>
 </head>
 <body>
@@ -2287,7 +2337,7 @@
                 <h2>What Early Users Are Saying</h2>
                 <p style="color: #5a6270; max-width: 600px; margin: 0.75rem auto 0;">From the founding members who got in first.</p>
             </div>
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1000px; margin: 0 auto;">
+            <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1000px; margin: 0 auto;">
                 <!-- Testimonial 1 -->
                 <div class="fade-in" style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
                     <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
